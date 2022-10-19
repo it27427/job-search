@@ -1,0 +1,83 @@
+@function size($size, $base: 16) {
+  @return calc($size / $base) + rem;
+}
+
+@mixin setBgColor($bg, $clr) {
+  background: $bg;
+  color: $clr;
+}
+
+$googlesans: Google Sans;
+$opensans: "Open Sans";
+
+// THEME COLORS
+
+// BACKGROUND COLORS
+$bodybg: hsl(210, 17%, 98%); //#f8f9fa
+
+// TEXT COLORS
+$textprimary: hsl(225, 6%, 13%); //#202124
+$primarytext: hsl(213, 5%, 39%); //#5f6368
+$graytext: hsl(207, 5%, 52%); //#80868b
+$green: hsl(136, 53%, 43%); //#34a853
+$blue: hsl(214, 82%, 51%); //#1a73e8
+$orange: hsl(41, 100%, 49%); //#f9ab00
+$red: hsl(4, 71%, 50%); //#d93025
+
+// BUTTON COLORS
+$btnhoverbg: hsl(217, 89%, 61%); //#4285f4
+$btncolor: hsl(216, 77%, 42%); //#185abc
+$btnshadow: 0 0 size(3) size(3) $btnhoverbg;
+
+// INPUT COLORS
+$inputcolor: hsl(206, 6%, 25%); //#3c4043
+$inputborder: hsl(210, 6%, 63%); //#9aa0a6
+
+// LINK COLORS
+$linkcolor: hsl(215, 79%, 46%); //#1967d2
+$linkhover: hsl(216, 77%, 42%); //#185abc
+
+// *,
+// *::before,
+// *::after {
+//   box-sizing: inherit;
+// }
+
+body {
+  @include setBgColor($bodybg, $textprimary);
+  // font-family: $googlesans, $opensans;
+  // font-size: size(14);
+  // -moz-osx-font-smoothing: initial;
+  // -webkit-font-smoothing: initial;
+  // line-height: calc(18 / 14);
+  // overflow-x: hidden;
+  // scroll-behavior: smooth;
+}
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+// }
+
+// UTILITIES
+.gc-overline {
+  color: inherit;
+  font-size: size(11);
+  font-weight: 500;
+  letter-spacing: size(0.8);
+  line-height: calc(21 / 11);
+  margin: 0;
+  padding: 0;
+  text-rendering: auto;
+  text-transform: uppercase;
+}
+
+.logo {
+  .icon {
+    width: size(74);
+    height: size(24);
+  }
+}
