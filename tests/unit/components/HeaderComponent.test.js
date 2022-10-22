@@ -2,8 +2,8 @@ import { mount } from "@vue/test-utils";
 import HeaderComponent from "@/components/Header/HeaderComponent";
 
 describe("HeaderComponent", () => {
-  it("displays brand name", () => {
-    const wrapperheader = mount(HeaderComponent);
-    expect(wrapperheader.text());
+  it("display brand name", () => {
+    const wrapper = mount(HeaderComponent);
+    expect(wrapper.text()).toMatch("Toto Careers");
   });
 });

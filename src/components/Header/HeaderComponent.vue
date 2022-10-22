@@ -1,11 +1,11 @@
 <template>
   <header class="w-full text-sm">
-    <nav class="fixed top-0 left-0 w-full h-16 bg-white">
+    <div class="fixed top-0 left-0 w-full h-16 bg-white">
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
         <a href="/" class="logo h-full flex items-center flex-nowrap">
-          <span class="icon">
+          <span class="icon hidden">
             <svg
               alt="google-logo-icon"
               width="100%"
@@ -41,15 +41,41 @@
               </g>
             </svg>
           </span>
-          <span class="ml-1.5 logo-text-1 text-xl">Career</span>
+          <span class="ml-1.5 logo-text-1 text-xl">{{ company }}</span>
         </a>
+
+        <nav class="h-full ml-12">
+          <ul class="flex h-full p-0 m-0 list-none">
+            <li class="h-full">
+              <a href="" class="flex items-center h-full py-2.5">Teams</a>
+            </li>
+            <li v-for="(menuItem, i) in menuItems" :key="i" class="h-full ml-9">
+              <a href="" class="flex items-center h-full py-2.5">{{
+                menuItem
+              }}</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </nav>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
   name: "HeaderComponent",
+  data() {
+    return {
+      company: "Toto Careers",
+      menuItems: [
+        "Teams",
+        "Locations",
+        "Life at Toto",
+        "How we hire",
+        "Students",
+        "Jobs",
+      ],
+    };
+  },
 };
 </script>
