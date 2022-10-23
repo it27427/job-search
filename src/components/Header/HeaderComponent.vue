@@ -60,7 +60,8 @@
         </nav>
 
         <div class="flex items-center h-full ml-auto">
-          <action-button />
+          <profile-thumbnail v-if="isLoggedIn" />
+          <action-button v-else />
         </div>
       </div>
     </div>
@@ -69,10 +70,14 @@
 
 <script>
 import ActionButton from "@/components/ActionButton/ActionButton";
+import ProfileThumbnail from "@/components/ProfileThumbnail/ProfileThumbnail";
 
 export default {
   name: "HeaderComponent",
-  components: { ActionButton },
+  components: {
+    ActionButton,
+    ProfileThumbnail,
+  },
   data() {
     return {
       company: "Toto Careers",
@@ -84,6 +89,7 @@ export default {
         "Students",
         "Jobs",
       ],
+      isLoggedIn: false,
     };
   },
 };
