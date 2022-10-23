@@ -9,7 +9,7 @@ describe("HeaderComponent", () => {
 
   it("display menu items for navigations", () => {
     const wrapper = mount(HeaderComponent);
-    const navMenuItems = wrapper.findAll("[data-test='main-nav-item']");
+    const navMenuItems = wrapper.findAll("[data-text='main-nav-item']");
     const navMenuTexts = navMenuItems.map((item) => item.text());
     expect(navMenuTexts).toEqual([
       "Teams",
