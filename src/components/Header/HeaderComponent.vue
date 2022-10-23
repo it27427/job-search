@@ -46,24 +46,33 @@
 
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
-            <li class="h-full">
-              <a href="" class="flex items-center h-full py-2.5">Teams</a>
-            </li>
-            <li v-for="(menuItem, i) in menuItems" :key="i" class="h-full ml-9">
+            <li
+              v-for="(menuItem, i) in menuItems"
+              :key="i"
+              class="h-full ml-9 first:ml-0"
+              data-text="main-nav-item"
+            >
               <a href="" class="flex items-center h-full py-2.5">{{
                 menuItem
               }}</a>
             </li>
           </ul>
         </nav>
+
+        <div class="flex items-center h-full ml-auto">
+          <action-button />
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import ActionButton from "@/components/ActionButton/ActionButton";
+
 export default {
   name: "HeaderComponent",
+  components: { ActionButton },
   data() {
     return {
       company: "Toto Careers",
