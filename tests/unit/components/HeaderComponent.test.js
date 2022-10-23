@@ -2,11 +2,13 @@ import { mount } from "@vue/test-utils";
 import HeaderComponent from "@/components/Header/HeaderComponent";
 
 describe("HeaderComponent", () => {
+  // DISPLAY LOGO TEXT
   it("display brand name", () => {
     const wrapper = mount(HeaderComponent);
     expect(wrapper.text()).toMatch("Toto Careers");
   });
 
+  // DISPLAY MENU ITEMS
   it("display menu items for navigations", () => {
     const wrapper = mount(HeaderComponent);
     const navMenuItems = wrapper.findAll("[data-text='main-nav-item']");
@@ -21,6 +23,7 @@ describe("HeaderComponent", () => {
     ]);
   });
 
+  // IF USER IS LOGGED OUT
   describe("when user is logged out", () => {
     it("prompts user to sign in", () => {
       const wrapper = mount(HeaderComponent, {
@@ -37,6 +40,7 @@ describe("HeaderComponent", () => {
     });
   });
 
+  // IF USER IS LOGGED IN
   describe("when user is logged in", () => {
     it("displays profile picture", () => {
       const wrapper = mount(HeaderComponent, {
